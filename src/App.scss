@@ -1,0 +1,38 @@
+:root {
+  --font-primary: 'Quicksand', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+
+  --color-primary: #003f88;
+  --color-primary-light: #0496ff;
+
+  --color-grey: #C4C4C4;
+  --color-grey-light: #f4f4f4;
+
+  --color-white: #ffffff;
+
+  --font-xs: 1.3rem;
+  --font-s: 1.6rem;
+  --font-m: 1.8rem;
+  --font-l: 2rem;
+  --font-xl: 4rem;
+}
+
+/* 62.5% of 16px = 10px || 1rem = 10px */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; 
+}
+
+*,
+*::before, 
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--font-primary);
+}
+
+

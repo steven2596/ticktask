@@ -1,0 +1,74 @@
+.center {
+    grid-column: center-start / center-end;
+    padding: 0 20rem;
+    
+    &__header {
+        margin-bottom: 4rem;
+    }
+
+    &__text {
+        font-size: var(--font-l);
+        margin: 2rem 0;
+    }
+
+    &__form {
+        width: 100%;
+        display: flex;
+
+    }
+
+    &__input {
+       flex: 1;
+       border: none;
+       background-color: var(--color-grey-light);
+       padding: 0 1.5rem;
+       font-size: var(--font-m);
+       transition: all .3s;
+       
+
+       &:focus {
+           outline: none;
+           box-shadow: 0 0 5px 1px var(--color-primary-light);
+       }
+    }
+
+    &__button {
+        flex-basis: 20%;
+        padding: 1rem 2rem;
+        background-color: var(--color-primary-light);
+        border: none;
+        
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__button-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    &__today {
+
+    }
+
+    &__completed {
+
+    }
+}
+
+.today {
+    &__heading {
+        font-size: var(--font-l);
+    }
+
+    &__list {
+        list-style: none;
+        font-size: var(--font-m);
+    }
+
+    &__task {
+
+    }
+}

@@ -1,0 +1,22 @@
+.main-page {
+    display: grid;
+    grid-template-columns: [navbar-start]  25rem [center-start]  
+                            repeat(8, [col-start] 1fr [col-end]) 
+                            [center-end];
+    
+    grid-template-rows: 100vh;
+}
+
+.component {
+    
+
+    &-2 {
+        
+        background-color: white;
+    }
+
+    &-3 {
+        grid-column: center-end / full-end;
+        background-color: red;
+    }
+}

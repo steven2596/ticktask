@@ -3,18 +3,25 @@
   --font-secondary: 'Roboto', sans-serif;
 
   --color-primary: #003f88;
-  --color-primary-light: #0496ff;
+  --color-primary-light: rgb(4, 150, 255); //#0496ff
 
   --color-grey: #C4C4C4;
   --color-grey-light: #f4f4f4;
+  --color-grey-dark:#6c757d;
 
   --color-white: #ffffff;
+  --color-black: #000000;
+  --color-red: #e5383b;
+  --color-yellow: #ffd607;
+  --color-green: #31d843;
 
-  --font-xs: 1.3rem;
+  --font-xs: 1.5rem;
   --font-s: 1.6rem;
   --font-m: 1.8rem;
   --font-l: 2rem;
-  --font-xl: 4rem;
+  --font-xl: 3rem;
+
+  --box-shadow: 0 0 10px 0px rgba(0, 0, 0, .3);
 }
 
 /* 62.5% of 16px = 10px || 1rem = 10px */

@@ -14,3 +14,8 @@ export const editTask = (task) => ({
     type: TasksActionTypes.EDIT_TASK,
     payload: task
 });
+
+export const setCurrentTask = (task) => ({
+    type: TasksActionTypes.SET_CURRENT_TASK,
+    payload: task
+})

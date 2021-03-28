@@ -1,22 +1,9 @@
 .main-page {
     display: grid;
-    grid-template-columns: [navbar-start]  25rem [center-start]  
+    grid-template-columns: [full-start]  20rem [center-start]  
                             repeat(8, [col-start] 1fr [col-end]) 
-                            [center-end];
+                            [center-end] 25rem [full-end];
     
     grid-template-rows: 100vh;
 }
 
-.component {
-    
-
-    &-2 {
-        
-        background-color: white;
-    }
-
-    &-3 {
-        grid-column: center-end / full-end;
-        background-color: red;
-    }
-}

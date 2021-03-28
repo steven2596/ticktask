@@ -2,7 +2,8 @@ import { TasksActionTypes } from './tasks.types';
 import { addTaskToList, deleteTaskFromList, editTaskFromList } from './tasks.util';
 
 const INITIAL_STATE = {
-    tasks: []
+    tasks: [],
+    currentTask: {}
 };
 
 const tasksReducer = (state = INITIAL_STATE, action) => {
@@ -23,6 +24,12 @@ const tasksReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 tasks: editTaskFromList(state.tasks, action.payload)
+            };
+
+        case TasksActionTypes.SET_CURRENT_TASK:
+            return {
+                ...state,
+                currentTask: action.payload
             };
 
         default: return state;

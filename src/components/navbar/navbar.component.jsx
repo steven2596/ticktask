@@ -1,9 +1,13 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectTasks } from '../../redux/tasks/tasks.selectors';
+
 import './navbar.styles.scss';
 import sprite from '../../assets/icons/sprite.svg';
 
-const Navbar = () => {
+const Navbar = ({ tasks }) => {
     return (
         <nav className="navbar">
             <h2 className="navbar__logo">TickTask</h2>
@@ -20,6 +24,7 @@ const Navbar = () => {
                         <use href={sprite + '#icon-stack'} />
                     </svg>
                     <span className="navbar__title">All Tasks</span>
+                    <span className="navbar__count">{tasks.length}</span>
                 </li>
                 <li className="navbar__item">
                     <svg className="navbar__icon" >
@@ -46,4 +51,8 @@ const Navbar = () => {
     )
 };
 
-export default Navbar;
+const mapStateToProps = createStructuredSelector({
+    tasks: selectTasks
+})
+
+export default connect(mapStateToProps)(Navbar);

@@ -1,19 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+import { connect } from 'react-redux';
+import { setCurrentTask } from '../../redux/tasks/tasks.actions';
 import './task.styles.scss';
 import sprite from '../../assets/icons/sprite.svg';
+import TaskMenuDropdown from '../taskmenu-dropdown/taskmenu-dropdown.component';
+import CustomCheckbox from '../custom-checkbox/custom-checkbox.component';
 
-const Task = ({ task }) => {
-    const { title, priority, status } = task;
+const Task = ({ task, setCurrentTask }) => {
+    const [dropdown, setDropdown] = useState(false);
+
+    const { id, title, priority, isCompleted } = task;
     return (
-        <li className="task">
-            <input type="checkbox" className="task__checkbox" />
-            <span className="task__title">{title}</span>
-            <svg className="task__menu-icon">
+        <div className="task">
+            <CustomCheckbox priority={priority} task={task} />
+            <span className="task__title" onClick={() => setCurrentTask(task)} >{title}</span>
+            <svg className="task__menu-icon" onClick={() => setDropdown(!dropdown)} >
                 <use href={sprite + '#icon-list2'} />
             </svg>
-        </li>
+            {
+                dropdown ?
+                    <TaskMenuDropdown
+                        key={id}
+                        task={task}
+                        setDropdown={setDropdown}
+                        dropdown={dropdown}
+                    /> : null
+            }
+        </div>
     )
 };
 
-export default Task;
+
+
+const mapDispatchToProps = (dispatch) => ({
+    setCurrentTask: (task) => dispatch(setCurrentTask(task))
+});
+
+export default connect(null, mapDispatchToProps)(Task);

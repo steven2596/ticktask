@@ -18,4 +18,8 @@ export const editTask = (task) => ({
 export const setCurrentTask = (task) => ({
     type: TasksActionTypes.SET_CURRENT_TASK,
     payload: task
-})
+});
+
+export const clearCompletedTasks = () => ({
+    type: TasksActionTypes.CLEAR_COMPLETED_TASKS
+});

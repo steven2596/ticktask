@@ -1,5 +1,5 @@
 import { TasksActionTypes } from './tasks.types';
-import { addTaskToList, deleteTaskFromList, editTaskFromList } from './tasks.util';
+import { addTaskToList, deleteTaskFromList, editTaskFromList, removeCompletedFromList } from './tasks.util';
 
 const INITIAL_STATE = {
     tasks: [],
@@ -30,6 +30,12 @@ const tasksReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 currentTask: action.payload
+            };
+
+        case TasksActionTypes.CLEAR_COMPLETED_TASKS:
+            return {
+                ...state,
+                tasks: removeCompletedFromList(state.tasks)
             };
 
         default: return state;

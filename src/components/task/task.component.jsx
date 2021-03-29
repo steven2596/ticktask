@@ -6,9 +6,11 @@ import './task.styles.scss';
 import sprite from '../../assets/icons/sprite.svg';
 import TaskMenuDropdown from '../taskmenu-dropdown/taskmenu-dropdown.component';
 import CustomCheckbox from '../custom-checkbox/custom-checkbox.component';
+import TaskEditModal from '../task-edit-modal/task-edit-modal.component';
 
 const Task = ({ task, setCurrentTask }) => {
     const [dropdown, setDropdown] = useState(false);
+    const [modal, setModal] = useState(false);
 
     const { id, title, priority, isCompleted } = task;
     return (
@@ -31,6 +33,16 @@ const Task = ({ task, setCurrentTask }) => {
                         task={task}
                         setDropdown={setDropdown}
                         dropdown={dropdown}
+                        modal={modal}
+                        setModal={setModal}
+                    /> : null
+            }
+            {
+                modal ?
+                    <TaskEditModal
+                        key={id}
+                        task={task}
+                        setModal={setModal}
                     /> : null
             }
         </div>

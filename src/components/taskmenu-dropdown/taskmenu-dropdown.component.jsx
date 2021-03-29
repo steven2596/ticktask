@@ -7,7 +7,9 @@ import { deleteTask, editTask } from '../../redux/tasks/tasks.actions';
 import './taskmenu-dropdown.styles.scss';
 import sprite from '../../assets/icons/sprite.svg';
 
-const TaskMenuDropdown = ({ task, deleteTask, editTask, setDropdown, dropdown }) => {
+
+const TaskMenuDropdown = ({ task, deleteTask, editTask, setDropdown, dropdown, modal, setModal }) => {
+
 
     const clickToHideDropdown = (num) => {
         editTask({
@@ -50,13 +52,20 @@ const TaskMenuDropdown = ({ task, deleteTask, editTask, setDropdown, dropdown })
                     </svg>
                     <span className="button__label">Delete</span>
                 </div>
-                <div className="button__container"  >
-                    <svg className="button__icon button__icon--edit">
+                <div
+                    className="button__container"
+                    onClick={() => {
+                        setModal(true);
+                        setDropdown(false);
+                    }}
+                >
+                    <svg className="button__icon button__icon--edit"  >
                         <use href={sprite + '#icon-pencil'} />
                     </svg>
                     <span className="button__label">Edit</span>
                 </div>
             </div>
+
         </div>
     )
 };

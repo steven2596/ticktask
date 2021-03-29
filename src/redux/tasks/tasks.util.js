@@ -25,3 +25,8 @@ export const editTaskFromList = (tasks, taskToEdit) => {
 
     return tasks;
 };
+
+//Remove completed tasks from tasklist
+export const removeCompletedFromList = (tasks) => {
+    return tasks.filter(task => task.isCompleted === false)
+};

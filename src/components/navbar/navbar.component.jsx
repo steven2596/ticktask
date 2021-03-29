@@ -7,7 +7,7 @@ import { selectTasks, selectCompletedTasks, selectIncompletedTasks } from '../..
 import './navbar.styles.scss';
 import sprite from '../../assets/icons/sprite.svg';
 
-const Navbar = ({ tasks, completedTasks, incompletedTasks, showComplete, setShowComplete, showIncomplete, setShowIncomplete }) => {
+const Navbar = ({ tasks, completedTasks, incompletedTasks, setShowComplete, setShowIncomplete }) => {
     return (
         <nav className="navbar">
             <h2 className="navbar__logo">TickTask</h2>
@@ -37,7 +37,7 @@ const Navbar = ({ tasks, completedTasks, incompletedTasks, showComplete, setShow
                         <use href={sprite + '#icon-spinner'} />
                     </svg>
                     <span className="navbar__title" >In Progress</span>
-                    <span className="navbar__count">{completedTasks.length}</span>
+                    <span className="navbar__count">{incompletedTasks.length}</span>
                 </li>
                 <li className="navbar__item" onClick={() => {
                     setShowComplete(true);
@@ -47,17 +47,17 @@ const Navbar = ({ tasks, completedTasks, incompletedTasks, showComplete, setShow
                         <use href={sprite + '#icon-checkbox'} />
                     </svg>
                     <span className="navbar__title">Completed</span>
-                    <span className="navbar__count">{incompletedTasks.length}</span>
+                    <span className="navbar__count">{completedTasks.length}</span>
                 </li>
 
             </ul>
 
-            <div className="navbar__footer">
+            {/* <div className="navbar__footer">
                 <svg className="navbar__icon" >
                     <use href={sprite + '#icon-exit'} />
                 </svg>
                 <span className="navbar__title">Sign In</span>
-            </div>
+            </div> */}
         </nav>
     )
 };

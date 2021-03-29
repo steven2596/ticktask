@@ -5,7 +5,7 @@
   --color-primary: #003f88;
   --color-primary-light: rgb(4, 150, 255); //#0496ff
 
-  --color-grey: #C4C4C4;
+  --color-grey: rgb(196, 196, 196); //#C4C4C4
   --color-grey-light: #f4f4f4;
   --color-grey-dark:rgb(108, 117, 125); //#6c757d
 
@@ -41,5 +41,9 @@ html {
 body {
   font-family: var(--font-primary);
 }
+
+
+
+
 
 

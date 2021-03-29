@@ -1,0 +1,55 @@
+.modal {
+
+    &__overlay {
+        background-color: rgba(0, 0, 0, .5);
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+    }
+
+    &__content {
+        background-color: var(--color-white);
+        width: 50%;
+        height: 65%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        padding: 2rem;
+        border-radius: 3px;
+    }
+
+    &__header {
+        width: 100%;
+        display: flex;
+        align-items: baseline;
+    }
+
+
+    &__inbox-icon {
+        height: 1.8rem;
+        width: 1.8rem;
+    }
+
+    &__heading {
+        font-size: var(--font-m);
+        margin-left: 1rem;
+    }
+
+    &__exit-icon {
+        height: 1.8rem;
+        width: 1.8rem;
+        margin-left: auto;
+        cursor: pointer;
+        transition: all .2s;
+
+        &:hover {
+            fill: var(--color-red);
+            transform: scale(1.2);
+        }
+    }
+}

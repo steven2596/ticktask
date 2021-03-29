@@ -13,6 +13,12 @@
         border-radius: 50%;
         border: 5px solid var(--color-green);
         transition: all .3s;
+
+        &--complete {
+            border: none;
+            background-color: var(--color-green);
+        }
+
     }
 
 }
@@ -21,14 +27,29 @@
 
 .red {
     border: 5px solid var(--color-red);
+
+    &--complete {
+        border: none;
+        background-color: var(--color-red);
+    }
 }
 
 .yellow {
     border: 5px solid var(--color-yellow);
+
+    &--complete {
+        border: none;
+        background-color: var(--color-yellow);
+    }
 }
 
 .blue {
     border: 5px solid var(--color-primary-light);
+
+    &--complete {
+        border: none;
+        background-color: var(--color-primary-light);
+    }
 }
 
 .taskCompleted {

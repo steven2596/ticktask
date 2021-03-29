@@ -15,5 +15,10 @@ export const selectCurrentTask = createSelector(
 
 export const selectCompletedTasks = createSelector(
     [selectTasks],
+    tasks => tasks.filter(task => task.isCompleted === true)
+);
+
+export const selectIncompletedTasks = createSelector(
+    [selectTasks],
     tasks => tasks.filter(task => task.isCompleted === false)
 );

@@ -14,15 +14,17 @@ const Sidebar = ({ tasks, currentTask }) => {
     //When task is deleted, it will be removed from sidebar task detail section
     return (
         <div className="sidebar">
+            <div className="sidebar__header"></div>
             {
                 existingTask ?
                     (
-                        <div className="sidebar__task">
-                            <h2 className="task__heading">{existingTask.title}</h2>
-                            <p className="task__detail">{existingTask.detail}</p>
+                        <div className="sidebar__detail">
+                            <h2 className="detail__heading">{existingTask.title}</h2>
+                            <p className="detail__description">Description:</p>
+                            <p className="detail__content">{existingTask.detail}</p>
                         </div>
                     ) :
-                    <div className="sidebar__text">Click a task to view detail</div>
+                    <div className="sidebar__empty-text">Click a task to view detail</div>
             }
         </div>
     )

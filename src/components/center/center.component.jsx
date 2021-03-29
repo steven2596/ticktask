@@ -8,11 +8,12 @@ import './center.styles.scss';
 import sprite from '../../assets/icons/sprite.svg';
 
 import { addTask } from '../../redux/tasks/tasks.actions';
-import { selectCompletedTasks } from '../../redux/tasks/tasks.selectors';
+import { selectCompletedTasks, selectIncompletedTasks } from '../../redux/tasks/tasks.selectors';
 import Task from '../task/task.component';
+import TaskList from '../task-list/task-list.component';
 
 
-const Center = ({ addTask, tasks }) => {
+const Center = ({ addTask, completedTasks, incompletedTasks, showComplete, showIncomplete }) => {
     const [task, setTask] = useState('');
 
     const handleSubmit = (e) => {
@@ -52,23 +53,21 @@ const Center = ({ addTask, tasks }) => {
                 </form>
             </section>
 
-            <section className="center__today">
-                <h2 className="today__heading" >Tasks in progress</h2>
-                <div className="today__list" >
-                    {
-                        tasks.map(task => (
-                            <Task key={task.id} task={task} />
-
-                        ))
-                    }
-                </div>
+            <section className="center__tasklist">
+                {
+                    showIncomplete ? <TaskList tasks={incompletedTasks} incomplete /> : null
+                }
+                {
+                    showComplete ? <TaskList tasks={completedTasks} /> : null
+                }
             </section>
         </div>
     )
 };
 
 const mapStateToProps = createStructuredSelector({
-    tasks: selectCompletedTasks
+    completedTasks: selectCompletedTasks,
+    incompletedTasks: selectIncompletedTasks
 });
 
 const mapDispatchToProps = (dispatch) => ({

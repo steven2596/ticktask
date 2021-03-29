@@ -1,0 +1,13 @@
+.tasklist {
+    margin-bottom: 5rem;
+
+    &__heading {
+        font-size: var(--font-m);
+        margin-bottom: 1.5rem;
+    }
+
+    &__list {
+        list-style: none;
+        font-size: var(--font-m);
+    }
+}

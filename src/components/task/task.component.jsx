@@ -12,10 +12,16 @@ const Task = ({ task, setCurrentTask }) => {
 
     const { id, title, priority, isCompleted } = task;
     return (
-        <div className="task">
+        <div className={`task ${isCompleted ? 'task--complete' : ''}`}>
             <CustomCheckbox priority={priority} task={task} />
-            <span className="task__title" onClick={() => setCurrentTask(task)} >{title}</span>
-            <svg className="task__menu-icon" onClick={() => setDropdown(!dropdown)} >
+            <span
+                className={`task__title ${isCompleted ? 'task__title--complete' : ''}`}
+                onClick={() => setCurrentTask(task)} >
+                {title}
+            </span>
+            <svg
+                className="task__menu-icon"
+                onClick={() => setDropdown(!dropdown)} >
                 <use href={sprite + '#icon-list2'} />
             </svg>
             {

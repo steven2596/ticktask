@@ -2,12 +2,12 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { selectTasks } from '../../redux/tasks/tasks.selectors';
+import { selectTasks, selectCompletedTasks, selectIncompletedTasks } from '../../redux/tasks/tasks.selectors';
 
 import './navbar.styles.scss';
 import sprite from '../../assets/icons/sprite.svg';
 
-const Navbar = ({ tasks }) => {
+const Navbar = ({ tasks, completedTasks, incompletedTasks, showComplete, setShowComplete, showIncomplete, setShowIncomplete }) => {
     return (
         <nav className="navbar">
             <h2 className="navbar__logo">TickTask</h2>
@@ -19,24 +19,35 @@ const Navbar = ({ tasks }) => {
                     </svg>
                     <span className="navbar__title">Today</span>
                 </li>
-                <li className="navbar__item">
+                <li className="navbar__item" onClick={() => {
+                    setShowComplete(true);
+                    setShowIncomplete(true);
+                }}>
                     <svg className="navbar__icon" >
                         <use href={sprite + '#icon-stack'} />
                     </svg>
                     <span className="navbar__title">All Tasks</span>
                     <span className="navbar__count">{tasks.length}</span>
                 </li>
-                <li className="navbar__item">
+                <li className="navbar__item" onClick={() => {
+                    setShowComplete(false);
+                    setShowIncomplete(true);
+                }} >
                     <svg className="navbar__icon" >
                         <use href={sprite + '#icon-spinner'} />
                     </svg>
-                    <span className="navbar__title">In Progress</span>
+                    <span className="navbar__title" >In Progress</span>
+                    <span className="navbar__count">{completedTasks.length}</span>
                 </li>
-                <li className="navbar__item">
+                <li className="navbar__item" onClick={() => {
+                    setShowComplete(true);
+                    setShowIncomplete(false);
+                }} >
                     <svg className="navbar__icon" >
                         <use href={sprite + '#icon-checkbox'} />
                     </svg>
                     <span className="navbar__title">Completed</span>
+                    <span className="navbar__count">{incompletedTasks.length}</span>
                 </li>
 
             </ul>
@@ -52,7 +63,9 @@ const Navbar = ({ tasks }) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-    tasks: selectTasks
+    tasks: selectTasks,
+    completedTasks: selectCompletedTasks,
+    incompletedTasks: selectIncompletedTasks
 })
 
 export default connect(mapStateToProps)(Navbar);

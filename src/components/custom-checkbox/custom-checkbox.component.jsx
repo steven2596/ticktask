@@ -26,8 +26,14 @@ const CustomCheckbox = ({ priority, editTask, task }) => {
     }
 
     return (
-        <div className="checkbox__container" onClick={() => completeTask()}>
-            <div className={`checkbox__input ${priorityColor} ${complete ? 'taskCompleted' : ''}`} />
+        <div
+            className="checkbox__container" onClick={() => completeTask()}>
+            <div
+                className={`checkbox__input 
+                ${task.isCompleted ? 'checkbox__input--complete' : ''} 
+                ${task.isCompleted ? priorityColor + '--complete' : ''} 
+                ${priorityColor} 
+                ${complete ? 'taskCompleted' : ''}`} />
         </div>
     )
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { connect } from 'react-redux';
 import { setCurrentTask } from '../../redux/tasks/tasks.actions';
@@ -11,6 +11,7 @@ import TaskEditModal from '../task-edit-modal/task-edit-modal.component';
 const Task = ({ task, setCurrentTask }) => {
     const [dropdown, setDropdown] = useState(false);
     const [modal, setModal] = useState(false);
+
 
     const { id, title, priority, isCompleted } = task;
     return (

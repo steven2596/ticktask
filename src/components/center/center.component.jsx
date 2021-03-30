@@ -9,7 +9,7 @@ import sprite from '../../assets/icons/sprite.svg';
 
 import { addTask } from '../../redux/tasks/tasks.actions';
 import { selectCompletedTasks, selectIncompletedTasks } from '../../redux/tasks/tasks.selectors';
-import Task from '../task/task.component';
+
 import TaskList from '../task-list/task-list.component';
 
 

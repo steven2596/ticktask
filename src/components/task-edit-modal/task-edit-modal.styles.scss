@@ -1,3 +1,21 @@
+@keyframes revealAnimation {
+    0% {
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        
+    }
+
+
+    100% {
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);    
+    }
+}
+
 .modal {
 
     &__overlay {
@@ -13,7 +31,6 @@
     &__content {
         background-color: var(--color-white);
         width: 50%;
-        height: 65%;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -21,6 +38,8 @@
         z-index: 1000;
         padding: 2rem;
         border-radius: 3px;
+        animation: revealAnimation;
+        animation-duration: .5s;
     }
 
     &__header {

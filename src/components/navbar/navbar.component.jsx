@@ -13,12 +13,6 @@ const Navbar = ({ tasks, completedTasks, incompletedTasks, setShowComplete, setS
             <h2 className="navbar__logo">TickTask</h2>
 
             <ul className="navbar__menu">
-                <li className="navbar__item">
-                    <svg className="navbar__icon" >
-                        <use href={sprite + '#icon-calendar'} />
-                    </svg>
-                    <span className="navbar__title">Today</span>
-                </li>
                 <li className="navbar__item" onClick={() => {
                     setShowComplete(true);
                     setShowIncomplete(true);

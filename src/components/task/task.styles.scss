@@ -22,7 +22,8 @@
     padding: .5rem 1.5rem;
     position: relative;
     border-radius: 3px;
-    backface-visibility: hidden;
+    
+    
     animation: moveFromBottom;
     animation-duration: .5s;
     -webkit-animation: moveFromBottom;
@@ -39,7 +40,6 @@
        font-family: var(--font-secondary);
        margin-left: 2rem;
        cursor: pointer;
-       backface-visibility: hidden;
 
        &--complete {
            font-weight: 300;

@@ -14,7 +14,8 @@
         border-radius: .5rem;
         font-size: var(--font-s);
         font-family: var(--font-primary);
-        
+        background-color: var(--color-white);
+        color: var(--color-black);
     }
 
     &__text {
@@ -26,6 +27,8 @@
         overflow: auto;
         font-size: var(--font-s);
         font-family: var(--font-primary);
+        background-color: var(--color-white);
+        color: var(--color-black);
     }
 
     &__button {

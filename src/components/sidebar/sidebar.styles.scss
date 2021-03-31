@@ -19,13 +19,14 @@
         display: none;
     }
 
-    &__header {
-        height: 10rem;
-        border-bottom: 1px solid var(--color-grey);
-    }
+    // &__header {
+    //     height: 10rem;
+    //     border-bottom: 1px solid var(--color-grey);
+    // }
 
     &__detail {
         padding: 2rem;
+        margin-top: 5rem;
     }
 
     &__empty-text {
@@ -34,7 +35,12 @@
         color: var(--color-primary);
         opacity: .5;
         text-align: center;
-        margin-top: 80%;   
+        margin-top: 100%; 
+        
+        @media only screen and (max-width: 650px) {
+           font-size: var(--font-m);
+           padding: 2rem;
+        }
     }
 
 }

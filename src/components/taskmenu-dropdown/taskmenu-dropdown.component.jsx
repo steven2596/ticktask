@@ -50,7 +50,7 @@ const TaskMenuDropdown = ({ task, deleteTask, editTask, setDropdown, dropdown, m
                     <svg className="button__icon button__icon--delete">
                         <use href={sprite + '#icon-bin'} />
                     </svg>
-                    <span className="button__label">Delete</span>
+                    <span className="button__label button__label--delete">Delete</span>
                 </div>
                 <div
                     className="button__container"
@@ -62,7 +62,7 @@ const TaskMenuDropdown = ({ task, deleteTask, editTask, setDropdown, dropdown, m
                     <svg className="button__icon button__icon--edit"  >
                         <use href={sprite + '#icon-pencil'} />
                     </svg>
-                    <span className="button__label">Edit</span>
+                    <span className="button__label button__label--edit">Edit</span>
                 </div>
             </div>
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 import Center from '../../components/center/center.component';
+import NavHeader from '../../components/nav-header/nav-header.component';
+
 import Navbar from '../../components/navbar/navbar.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
 
@@ -12,7 +14,7 @@ const Main = () => {
 
     return (
         <div className='main-page' >
-
+            <NavHeader />
             <Navbar
                 showComplete={showComplete}
                 showIncomplete={showIncomplete}

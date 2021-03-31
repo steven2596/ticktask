@@ -6,6 +6,7 @@ import { selectTasks, selectCompletedTasks, selectIncompletedTasks } from '../..
 
 import './navbar.styles.scss';
 import sprite from '../../assets/icons/sprite.svg';
+import ThemeSwitcher from '../theme-switcher/theme-switcher.component';
 
 const Navbar = ({ tasks, completedTasks, incompletedTasks, setShowComplete, setShowIncomplete }) => {
     return (
@@ -46,12 +47,9 @@ const Navbar = ({ tasks, completedTasks, incompletedTasks, setShowComplete, setS
 
             </ul>
 
-            {/* <div className="navbar__footer">
-                <svg className="navbar__icon" >
-                    <use href={sprite + '#icon-exit'} />
-                </svg>
-                <span className="navbar__title">Sign In</span>
-            </div> */}
+            <div className="navbar__footer">
+                <ThemeSwitcher />
+            </div>
         </nav>
     )
 };

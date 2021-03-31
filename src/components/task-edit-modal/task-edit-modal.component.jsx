@@ -24,7 +24,7 @@ const TaskEditModal = ({ task, setModal }) => {
                 <TaskEditForm task={task} setModal={setModal} />
             </div>
         </>,
-        document.getElementById('portal')
+        document.getElementById('edit')
     )
 };
 

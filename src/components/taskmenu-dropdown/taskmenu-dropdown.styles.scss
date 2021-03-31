@@ -4,8 +4,9 @@
     position: absolute;
     top: 100%;
     right: -1rem;
-    z-index: 5;
+    z-index: 600;
     box-shadow: var(--box-shadow);
+    padding: .5rem 0;
     
 
     &__priority {
@@ -33,7 +34,7 @@
     &__menu {
         display: flex;
         align-items: center;
-        margin: 1.5rem 0 .5rem 0 ;
+        margin: 1.5rem .5rem .5rem .5rem ;
         border-bottom: 1px solid var(--color-grey);
         padding-bottom: 1rem;
         
@@ -85,7 +86,7 @@
         width: 1.8rem;
         height: 1.8rem;
         margin: 0 1rem;
-        fill: var(--color-grey-dark);
+        fill: var(--color-black);
     }
 
     &__container:hover &__icon--delete {
@@ -99,10 +100,19 @@
     &__label {
         font-size: var(--font-xs);
         font-weight: 400;
-        color: var(--color-grey-dark);
+        color: var(--color-black);
     }
 
-    &__delete:hover &__label {        
-        color: var(--color-black);    
+    &__container:hover &__label--delete {
+        color: var(--color-red);
     }
+
+    &__container:hover &__label--edit {
+        color: var(--color-primary); 
+    }
+
+    
+
+
+    
 }

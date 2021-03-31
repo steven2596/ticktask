@@ -3,7 +3,8 @@ import { addTaskToList, deleteTaskFromList, editTaskFromList, removeCompletedFro
 
 const INITIAL_STATE = {
     tasks: [],
-    currentTask: {}
+    currentTask: {},
+    theme: 'light'
 };
 
 const tasksReducer = (state = INITIAL_STATE, action) => {
@@ -37,6 +38,12 @@ const tasksReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 tasks: removeCompletedFromList(state.tasks)
             };
+
+        case TasksActionTypes.SET_THEME:
+            return {
+                ...state,
+                theme: action.payload
+            }
 
         default: return state;
 

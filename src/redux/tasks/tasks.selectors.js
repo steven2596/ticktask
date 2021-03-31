@@ -12,6 +12,10 @@ export const selectCurrentTask = createSelector(
     taskList => taskList.currentTask
 );
 
+export const selectTheme = createSelector(
+    [selectTaskList],
+    taskList => taskList.theme
+);
 
 export const selectCompletedTasks = createSelector(
     [selectTasks],

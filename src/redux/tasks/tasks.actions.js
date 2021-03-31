@@ -23,3 +23,9 @@ export const setCurrentTask = (task) => ({
 export const clearCompletedTasks = () => ({
     type: TasksActionTypes.CLEAR_COMPLETED_TASKS
 });
+
+export const setTheme = (data) => ({
+    type: TasksActionTypes.SET_THEME,
+    payload: data
+});
+

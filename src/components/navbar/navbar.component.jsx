@@ -46,10 +46,11 @@ const Navbar = ({ tasks, completedTasks, incompletedTasks, setShowComplete, setS
                 </li>
 
             </ul>
-
-            <div className="navbar__footer">
+            <div className="navbar__toggle" >
                 <ThemeSwitcher />
             </div>
+
+
         </nav>
     )
 };

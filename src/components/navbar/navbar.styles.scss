@@ -26,6 +26,12 @@
         padding: 0 2rem;
     }
 
+    &__toggle {
+        align-self: center;
+        margin-top: auto;
+        margin-bottom: 3rem;
+    }
+
     &__item {
         margin-bottom: 2.5rem;
         cursor: pointer;

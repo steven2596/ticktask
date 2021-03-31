@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectCurrentTask, selectTasks } from '../../redux/tasks/tasks.selectors';
 
+import ThemeSwitcher from '../theme-switcher/theme-switcher.component';
+
 import './sidebar.styles.scss';
 
 const Sidebar = ({ tasks, currentTask }) => {
@@ -14,7 +16,9 @@ const Sidebar = ({ tasks, currentTask }) => {
     //When task is deleted, it will be removed from sidebar task detail section
     return (
         <div className="sidebar">
-            <div className="sidebar__header"></div>
+            {/* <div className="sidebar__header">
+                <ThemeSwitcher />
+            </div> */}
             {
                 existingTask ?
                     (

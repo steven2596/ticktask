@@ -1,0 +1,56 @@
+// @keyframes moveFromBottom {
+//     0% {
+//         opacity: 0;
+//         transform: translateY(1rem);
+//     }
+
+//     100% {
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
+// }
+
+
+
+.task {
+    display: flex; 
+    align-items: center;
+    background: white;
+    // background-color: rgba(4, 150, 255, .3);
+    background-color: rgba(177, 200, 255, .5); //#B1C8FF
+    margin-bottom: 1rem;
+    padding: .5rem 1.5rem;
+    position: relative;
+    border-radius: 3px;
+    
+    
+    // animation: moveFromBottom;
+    // animation-duration: .5s;
+    // -webkit-animation: moveFromBottom;
+    // -webkit-animation-duration: .5s;
+
+    &--complete {
+        background-color: rgba(196, 196, 196, .3);
+        
+    }
+
+
+    &__title {
+       font-size: var(--font-s);
+       font-family: var(--font-secondary);
+       margin-left: 2rem;
+       cursor: pointer;
+
+       &--complete {
+           font-weight: 300;
+       }
+    }
+
+    &__menu-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: auto;
+        cursor: pointer;
+    }
+}
+

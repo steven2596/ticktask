@@ -6,7 +6,6 @@ import axios from 'axios';
 export function* fetchTasksFromDatabase() {
     const res = yield fetch('https://ticktask-server.herokuapp.com/tasks');
     const data = yield res.json();
-    console.log(data)
     yield put(fetchTasksSuccess(data))
 }
 

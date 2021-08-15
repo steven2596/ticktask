@@ -17,7 +17,7 @@ const TaskEditForm = ({ task, editTask, setModal }) => {
         editTask({
             ...task,
             title: name,
-            details: description
+            details: description.trim()
         });
 
         setModal(false);

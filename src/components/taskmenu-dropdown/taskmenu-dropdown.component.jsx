@@ -74,7 +74,11 @@ const TaskMenuDropdown = ({ task, deleteTask, editTask, setDropdown, dropdown, m
                 </motion.div>
 
                 <div className="dropdown__buttons">
-                    <div className="button__container" onClick={() => deleteTask(task)} >
+                    <div className="button__container"
+                        onClick={() => {
+                            deleteTask(task);
+                            setDropdown(false);
+                        }} >
                         <svg className="button__icon button__icon--delete">
                             <use href={sprite + '#icon-bin'} />
                         </svg>

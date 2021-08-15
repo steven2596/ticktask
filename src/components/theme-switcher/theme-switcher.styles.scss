@@ -1,0 +1,86 @@
+.theme-switch {
+
+
+    &__container {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+    }
+
+    &__icon {
+        
+
+        &--light {
+            width: 3rem;
+            height: 3rem;
+            fill: white;
+            transition: all .5s;
+        }
+
+        &--dark {
+            width: 2.2rem;
+            height: 2.2rem;
+            fill: white;
+            transition: all .5s;
+        }
+    }
+
+    &__label {
+        height: 2.5rem;
+        width: 5rem;
+        position: relative; 
+        margin: 0 .5rem; 
+    }
+
+    &__input {
+        display: none;
+    }
+
+    &__slider {
+        background-color: #6c757d;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        cursor: pointer;
+        border-radius: 10rem;
+
+        &::before {
+            content: "";
+            background-color: white;
+            top: 2.5px;
+            left: 2.5px;
+            height: 2rem;
+            width: 2rem;
+            position: absolute;
+            border-radius: 10rem;
+            transition: all .3s;
+
+            @media only screen and (max-width: 900px) {
+                top: 2px;
+            }
+            
+        }
+    }
+
+     
+
+    &__input:checked + &__slider::before {
+        transform: translateX(2.6rem);
+
+        @media only screen and (max-width: 900px) {
+            transform: translateX(2.4rem);
+        }
+    }
+
+
+}
+
+
+//Light and dark icons will glow when toggle
+.glow {
+    fill: var(--color-yellow);
+    transform: scale(1.15);
+}
+

@@ -1,0 +1,19 @@
+.main-page {
+    display: grid;
+    grid-template-columns: [full-start]  20rem [center-start]  
+                            repeat(8, [col-start] 1fr [col-end]) 
+                            [center-end] 25rem [full-end];
+    
+    grid-template-rows: minmax(100vh, max-content);
+
+    @media only screen and (max-width: 650px) {
+        grid-template-columns: [full-start]  18rem [center-start]  
+        repeat(8, [col-start] 1fr [col-end]) 
+        [center-end] 20rem [full-end];
+
+        grid-template-rows: 5rem minmax(100vh, max-content);  
+    }
+
+    
+}
+

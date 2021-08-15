@@ -1,0 +1,68 @@
+:root {
+  --font-primary: 'Quicksand', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+
+  // --color-primary: #3700b3;
+  --color-primary: #0088CC;
+  --color-primary-light: rgb(4, 150, 255); //#0496ff
+  
+
+  --color-grey: rgb(196, 196, 196); //#C4C4C4
+  --color-grey-light: #f4f4f4;
+  --color-grey-dark:rgb(108, 117, 125); //#6c757d
+
+  --color-background: #ffffff;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-red: #e5383b;
+  --color-yellow: #ffd607;
+  --color-green: #31d843;
+
+  --font-xs: 1.5rem;
+  --font-s: 1.6rem;
+  --font-m: 1.8rem;
+  --font-l: 2rem;
+  --font-xl: 3rem;
+
+  --box-shadow: 0 0 10px 0px rgba(0, 0, 0, .3);
+}
+
+[data-theme="dark"] {
+  --color-white: #121212;
+  --color-black: #ffffff;
+
+  --color-grey-light: #C4C4C4;
+
+  --color-background: #121212e1;
+}
+
+/* 62.5% of 16px = 10px || 1rem = 10px */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  
+  @media only screen and (max-width: 900px) {
+    font-size: 50%;
+  }
+}
+
+*,
+*::before, 
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-black);
+  background-color: var(--color-background);
+}
+
+
+
+
+
+

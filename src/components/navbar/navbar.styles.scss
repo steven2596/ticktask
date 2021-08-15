@@ -1,0 +1,68 @@
+.navbar {
+    grid-column: full-start / center-start;
+
+    background-color: var(--color-primary);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    
+    @media only screen and (max-width: 650px) {
+        display: none;
+    }
+
+    &__logo {
+        
+        font-size: 3rem;
+        font-family: var(--font-primary);
+        font-weight: 500;
+        margin: 1rem 2rem;
+        
+    }
+
+    &__menu {
+        margin-top: 10rem;
+        list-style: none;
+        padding: 0 2rem;
+    }
+
+    &__toggle {
+        align-self: center;
+        margin-top: auto;
+        margin-bottom: 3rem;
+    }
+
+    &__item {
+        margin-bottom: 2.5rem;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        width: 2rem;
+        height: 2rem;
+        fill: currentColor;
+    }
+
+    &__title {
+        font-size: var(--font-xs);
+        margin-left: 1.5rem;
+    }
+
+    &__count {
+        font-size: var(--font-s);
+        margin-left: auto;
+    }
+
+    &__footer {
+        flex-basis: 10%;
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+       
+    }
+
+    
+}

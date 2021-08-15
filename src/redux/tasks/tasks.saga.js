@@ -4,7 +4,7 @@ import { TasksActionTypes } from './tasks.types';
 import axios from 'axios';
 
 export function* fetchTasksFromDatabase() {
-    const res = yield fetch('http://localhost:5000/tasks');
+    const res = yield fetch('https://ticktask-server.herokuapp.com/tasks');
     const data = yield res.json();
     console.log(data)
     yield put(fetchTasksSuccess(data))
@@ -20,7 +20,7 @@ export function* fetchTasksAsync() {
 
 export function* addTaskAsync({ payload: { title } }) {
     try {
-        yield axios.post('http://localhost:5000/tasks/', { title: title })
+        yield axios.post('https://ticktask-server.herokuapp.com/tasks/', { title: title })
         yield call(fetchTasksFromDatabase);
     } catch (error) {
         yield put(databaseFailure(error))
@@ -29,7 +29,7 @@ export function* addTaskAsync({ payload: { title } }) {
 
 export function* deleteTaskAsync({ payload: { _id } }) {
     try {
-        yield axios.delete('http://localhost:5000/tasks/' + _id);
+        yield axios.delete('https://ticktask-server.herokuapp.com/tasks/' + _id);
         yield call(fetchTasksFromDatabase);
     } catch (error) {
         yield put(databaseFailure(error));
@@ -38,7 +38,7 @@ export function* deleteTaskAsync({ payload: { _id } }) {
 
 export function* editTaskAsync({ payload: { _id, title, details, priority, isCompleted } }) {
     try {
-        yield axios.put(`http://localhost:5000/tasks/${_id}`, { title, details, priority, isCompleted });
+        yield axios.put(`https://ticktask-server.herokuapp.com/tasks/${_id}`, { title, details, priority, isCompleted });
         yield call(fetchTasksFromDatabase);
     } catch (error) {
         yield put(databaseFailure(error));
